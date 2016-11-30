@@ -17,7 +17,7 @@ import java.net.URISyntaxException;
 public class WebMain {
     private static final Logger logger = LoggerFactory.getLogger(WebMain.class);
 
-    public static void main(String[] args) throws URISyntaxException {
+    public static void main(String[] args) throws URISyntaxException, ClassNotFoundException {
 //        if (args.length == 0) {
 //            logger.error("no database URI specified");
 //            logger.info("provide a database URI as a command line argument");
@@ -39,6 +39,7 @@ public class WebMain {
 
         // Set up the database pool.
         logger.info("using database URI {}", dburi);
+        Class.forName("org.postgresql.Driver");
         ConnectionFactory cxnFac = new DriverManagerConnectionFactory("jdbc:" + dburi.toString(), user, password);
         PoolableConnectionFactory pFac = new PoolableConnectionFactory(cxnFac, null);
         GenericObjectPool<PoolableConnection> objPool = new GenericObjectPool<>(pFac);
