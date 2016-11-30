@@ -18,16 +18,16 @@ public class WebMain {
     private static final Logger logger = LoggerFactory.getLogger(WebMain.class);
 
     public static void main(String[] args) throws URISyntaxException {
-        if (args.length == 0) {
-            logger.error("no database URI specified");
-            logger.info("provide a database URI as a command line argument");
-            logger.info("expected URI format: postgresql://user:password@localhost/bugTracker");
-            throw new IllegalArgumentException("no URI specified");
-        }
+//        if (args.length == 0) {
+//            logger.error("no database URI specified");
+//            logger.info("provide a database URI as a command line argument");
+//            logger.info("expected URI format: postgresql://user:password@localhost/bugTracker");
+//            throw new IllegalArgumentException("no URI specified");
+//        }
 
         // PostgreSQL driver doesn't know how to get user & password from URI
         // So we hand-mangle that.
-        URI dburi = URI.create(args[0]);
+        URI dburi = URI.create("postgres://nkjrqlmndjcago:7C6sg1c9SbEI0NaAHWwKQJhZjU@ec2-54-163-239-12.compute-1.amazonaws.com:5432/d7llvuqrgl1673");
         String auth = dburi.getUserInfo();
         String user = null, password = null;
         if (auth != null) {
