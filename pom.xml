@@ -75,7 +75,7 @@
           </execution>
         </executions>
         <configuration>
-          <assembleDirectory>${project.build.directory}/${project.artifactId}</assembleDirectory>
+          <assembleDirectory>target</assembleDirectory>
           <extraJvmArguments>-Dlog.color=true</extraJvmArguments>
           <programs>
             <program>
