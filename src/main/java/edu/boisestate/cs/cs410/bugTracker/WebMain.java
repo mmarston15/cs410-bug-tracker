@@ -46,6 +46,8 @@ public class WebMain {
         PoolingDataSource<PoolableConnection> source = new PoolingDataSource<>(objPool);
 
         Service http = Service.ignite();
+        int port = Integer.parseInt(System.getenv("PORT"));
+        http.port(port);
 
         BugTrackerServer server = new BugTrackerServer(source, http);
 
