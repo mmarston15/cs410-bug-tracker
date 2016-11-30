@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bug Tracker</title>
+    <meta charset="utf-8">
+</head>
+<body>
+<h1>Welcome to Bug Tracker</h1>
+{% if user != null %}
+<p>Welcome back, {{ user.name }}!</p>
+	<ul>
+	<li><a href="/profile/{{user.id}}">Profile</a></li>
+	<li><a href="/{{user.id}}/new-bug">Report Bug</a></li>
+	<li><a href="/logout">Log Out</a></li>
+	</ul>
+	
+	<form action="/search" method="GET">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+        <label>Search: <input type="text" name="search" width="100" placeholder="type to search..."></label>
+        <button type="submit">Search</button>
+    </form>
+    <br>
+    {% for bug in searchResults %}
+		<div>
+		    <tr>
+		        <td>{{bug.title}}</td>
+		        <td>{{bug.description}}</td>
+		        <td>{{bug.creationDate}}</td>
+		        <td>{{bug.closeDate}}</td>
+		        <td>{{bug.status}}</td>
+    		</tr>
+		</div>
+	{% endfor %}
+{% else %}
+    <h2>Log In</h2>
+    <form action="/login" method="POST">
+        <label>Username: <input name="username" type="text" width="50"></label><br>
+        <label>Password: <input name="password" type="password" width="50"></label><br>
+        <button type="submit">Log In!</button>
+    </form>
+    <h2>Create Account</h2>
+    <form action="/createUser" method="POST">
+    	<label>Email: <input name="email" type="text" width="50"></label><br>
+        <label>Display Name: <input name="displayName" type="text" width="50"></label><br>
+        <label>Username: <input name="username" type="text" width="50"></label><br>
+        <label>Password: <input name="password" type="password" width="50"></label><br>
+        <label>Confirm Password: <input name="confirm" type="password" width="50"></label><br>
+        <button type="submit">Create Account</button>
+    </form>
+{% endif %}
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bug Tracker</title>
+    <meta charset="utf-8">
+</head>
+<body>
+<a href="/">Home</a><br>
+<h1>Bug Details</h1>
+
+<p><b>Title:</b> {{bug.getTitle()}}</p>
+<p><b>Description:</b> {{bug.getDescription()}}</p>
+<p><b>Status:</b> {{bug.getStatus()}}</p>
+<p><b>Creator:</b> {{bug.getCreatorName()}}</p>
+<p><b>Assignee:</b> {{bug.getAssigneeName()}}</p>
+
+<a href="/{{userId}}/bug/{{bugId}}/edit">Edit</a>
+
+</body>
+</html>

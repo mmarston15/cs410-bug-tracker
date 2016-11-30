@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Report a Bug</title>
+</head>
+<body>
+    <a href="/">Home</a><br>
+    <h1>Report a Bug</h1>
+    <form action="/{{ userId }}/submit-new-bug" method="post">
+        <!--Title-->
+        <div>
+            <label for="title">Bug Title</label>
+            <input type="text" id="title" name="title">
+        </div>
+        <!--Details-->
+        <div>
+            <label for="description">Bug Details</label>
+            <textarea id="description" name="description"></textarea>
+        </div>
+        <!--Tags-->
+        <div>
+            <label for="tags">Tags</label>
+            <input type="text" id="tags" name="tags">
+        </div>
+        <!--Submit-->
+        <input type="submit">
+    </form>
+</body>
+</html>

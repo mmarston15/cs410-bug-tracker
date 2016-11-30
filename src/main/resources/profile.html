@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bug Tracker</title>
+    <meta charset="utf-8">
+</head>
+<body>
+<a href="/">Home</a><br>
+<h1>Profile Information</h1>
+
+<p><b>Username:</b> {{username}}</p>
+<p><b>Display Name:</b> {{display_name}}</p>
+<p><b>Email:</b> {{email}}</p>
+<p><b>Resolved Bugs:</b> {{resolved}}</p>
+
+<h2>Assigned Bugs</h2>
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Created</th>
+        <th>Closed</th>
+        <th>Status</th>
+    </tr>
+{% for bug in bugs %}
+    <tr>
+        <td><a href="/{{id}}/bug/{{bug.bugId}}">{{bug.title}}</a></td>
+        <td>{{bug.description}}</td>
+        <td>{{bug.creationDate}}</td>
+        <td>{{bug.closeDate}}</td>
+        <td>{{bug.status}}</td>
+    </tr>
+{% endfor %}
+</table>
+</body>
+</html>
