@@ -27,7 +27,7 @@ public class WebMain {
 
         // PostgreSQL driver doesn't know how to get user & password from URI
         // So we hand-mangle that.
-        URI dburi = URI.create("postgres://nkjrqlmndjcago:7C6sg1c9SbEI0NaAHWwKQJhZjU@ec2-54-163-239-12.compute-1.amazonaws.com:5432/d7llvuqrgl1673");
+        URI dburi = URI.create("postgres://tvjpycburmsxtl:HfLGRY4yNQi3s6ZfxajyQ29DI8@ec2-54-163-239-12.compute-1.amazonaws.com:5432/d7llvuqrgl1673");
         String auth = dburi.getUserInfo();
         String user = null, password = null;
         if (auth != null) {
