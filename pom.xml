@@ -80,7 +80,8 @@
           <programs>
             <program>
               <id>scidb-web</id>
-              <mainClass>edu.boisestate.cs410.scidb.WebMain</mainClass>
+              <mainClass>edu.boisestate.cs410.bugTracker.WebMain</mainClass>
+              <name>webapp</name>
             </program>
           </programs>
         </configuration>
