@@ -1,1 +1,1 @@
-web: sh target/bin/webapp
+web: sh target/classes/edu/boisestate/cd/cs410/bugTracker/WebMain
